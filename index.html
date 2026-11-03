@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Desk · Dhule Health Connect</title>
+<link rel="stylesheet" href="css/hospital.css">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <div class="logo-row"><div class="brand-mark"></div><div><b data-i="appName">Hospital Desk</b><small data-i="appSub">Dhule Health Connect · Staff portal</small></div></div>
+    <h1 data-i="loginTitle">Hospital sign in</h1>
+    <p class="sub" data-i="loginSub">Manage patient appointment requests for your hospital.</p>
+    <div id="login-err" class="alert hidden"></div>
+    <form id="login-form">
+      <label for="hospital-select" data-i="hospital">Hospital</label>
+      <select id="hospital-select"></select>
+      <label for="password" data-i="password">Password</label>
+      <div class="pw-box"><input id="password" type="password" autocomplete="current-password" placeholder="••••••••">
+        <button type="button" id="eye" aria-label="Show password">👁️</button></div>
+      <button class="btn primary block" id="login-btn" type="submit" data-i="signIn">Sign in</button>
+    </form>
+    <div class="mode-note" id="mode-note"></div>
+    <div class="lang-row" id="lang-login">
+      <button data-lang="en">EN</button><button data-lang="hi">हिं</button><button data-lang="mr">मरा</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="app" class="hidden">
+  <header class="top">
+    <div class="top-left"><div class="brand-mark"></div>
+      <div><div class="h-name" id="h-name"></div><div class="h-sub"><span class="live-dot"></span><span id="live-text" data-i="live">Live · auto-refreshing</span></div></div>
+    </div>
+    <div class="top-right">
+      <div class="lang-row" id="lang-app"><button data-lang="en">EN</button><button data-lang="hi">हिं</button><button data-lang="mr">मरा</button></div>
+      <button class="btn ghost" id="sound-btn" title="Alert sound">🔔</button>
+      <button class="btn danger-ghost" id="logout-btn" data-i="logout">Logout</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stats" id="stats"></section>
+
+    <div class="toolbar">
+      <div class="tabs" id="filter-tabs"></div>
+      <input id="search" type="search" placeholder="Search name / phone / ref…" data-ph="search">
+    </div>
+
+    <div id="list" class="list"></div>
+  </main>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<script src="js/dhc-store.js"></script>
+<script src="js/hospital.js"></script>
+</body>
+</html>
